@@ -109,6 +109,7 @@ public class Main {
         try {
             command.setData(addressBook, lastShownList);
             CommandResult result = command.execute();
+            storage.hasStorageFileExist();
             storage.save(addressBook);
             return result;
         } catch (Exception e) {
