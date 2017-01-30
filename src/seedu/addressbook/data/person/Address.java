@@ -21,6 +21,11 @@ public class Address {
     private Unit _unit;
     private PostalCode _postalCode;
     private boolean isPrivate;
+    
+    private static final int BLOCK_INDEX = 0;
+    private static final int STREET_INDEX = 1;
+    private static final int UNIT_INDEX = 2;
+    private static final int POSTAL_CODE_INDEX = 3;
 
     /**
      * Validates given address.
@@ -34,10 +39,10 @@ public class Address {
             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
         String[] primitiveComponents = trimmedAddress.split(", ");
-        _block = new Block(primitiveComponents[0]);
-        _street = new Street(primitiveComponents[1]);
-        _unit = new Unit(primitiveComponents[2]);
-        _postalCode = new PostalCode(primitiveComponents[3]);
+        _block = new Block(primitiveComponents[BLOCK_INDEX]);
+        _street = new Street(primitiveComponents[STREET_INDEX]);
+        _unit = new Unit(primitiveComponents[UNIT_INDEX]);
+        _postalCode = new PostalCode(primitiveComponents[POSTAL_CODE_INDEX]);
     }
 
     /**
