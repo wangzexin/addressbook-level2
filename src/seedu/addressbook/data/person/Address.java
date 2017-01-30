@@ -70,7 +70,8 @@ public class Address {
 
     @Override
     public String toString() {
-        return this.getBlock() + this.getStreet() + this.getUnit() + this.getPostalCode();
+        return this.getBlock() + ", " + this.getStreet() + ", " 
+        		+ this.getUnit() + ", " + this.getPostalCode();
     }
 
     @Override
