@@ -6,4 +6,8 @@ public class Street{
 	public Street(String value){
 		_value = value;
 	}
+	
+	public String getStreet(){
+		return _value;
+	}
 }

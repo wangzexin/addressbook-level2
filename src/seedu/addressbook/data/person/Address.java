@@ -46,22 +46,38 @@ public class Address {
     public static boolean isValidAddress(String test) {
         return test.matches(ADDRESS_VALIDATION_REGEX);
     }
+    
+    public String getBlock() {
+    	return _block.getBlock();
+    }
+
+    public String getStreet() {
+    	return _street.getStreet();
+    }
+
+    public String getUnit() {
+    	return _unit.getUnit();
+    }
+
+    public String getPostalCode() {
+    	return _postalCode.getPostalCode();
+    }
 
     @Override
     public String toString() {
-        return value;
+        return this.getBlock() + this.getStreet() + this.getUnit() + this.getPostalCode();
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof Address // instanceof handles nulls
-                && this.value.equals(((Address) other).value)); // state check
+                && this.toString().equals(((Address) other).toString())); // state check
     }
 
     @Override
     public int hashCode() {
-        return value.hashCode();
+        return this.toString().hashCode();
     }
 
     public boolean isPrivate() {

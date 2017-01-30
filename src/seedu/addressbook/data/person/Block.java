@@ -6,4 +6,8 @@ public class Block{
 	public Block(String value){
 		_value = value;
 	}
+	
+	public String getBlock(){
+		return _value;
+	}
 }

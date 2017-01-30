@@ -6,4 +6,8 @@ public class PostalCode{
 	public PostalCode(String value){
 		_value = value;
 	}
+	
+	public String getPostalCode(){
+		return _value;
+	}
 }

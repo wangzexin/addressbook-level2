@@ -6,4 +6,8 @@ public class Unit{
 	public Unit(String value){
 		_value = value;
 	}
+	
+	public String getUnit(){
+		return _value;
+	}
 }
