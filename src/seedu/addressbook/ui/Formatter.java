@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 public class Formatter {
-	/** A decorative prefix added to the beginning of lines printed by AddressBook */
+	/** A decorative string added to the beginning or end of lines printed by AddressBook */
     private String _decorator;
     
     public Formatter(String decorator){
