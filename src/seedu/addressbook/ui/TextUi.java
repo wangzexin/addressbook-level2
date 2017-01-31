@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class TextUi {
 
     /** A decorative prefix added to the beginning of lines printed by AddressBook */
-    private static final String LINE_PREFIX = "|| ";
+    private static final String LINE_DECORATOR = "|| ";
 
     /** A platform independent line separator. */
     private static final String LS = System.lineSeparator();
@@ -38,14 +38,18 @@ public class TextUi {
 
     private final Scanner in;
     private final PrintStream out;
+    
+    private Formatter _decorator;
 
     public TextUi() {
         this(System.in, System.out);
+        _decorator = new Formatter(LINE_DECORATOR);
     }
 
     public TextUi(InputStream in, PrintStream out) {
         this.in = new Scanner(in);
         this.out = out;
+        _decorator = new Formatter(LINE_DECORATOR);
     }
 
     /**
@@ -76,7 +80,7 @@ public class TextUi {
      * @return command (full line) entered by the user
      */
     public String getUserCommand() {
-        out.print(LINE_PREFIX + "Enter command: ");
+        out.print(_decorator.addPrefix("Enter command: "));
         String fullInputLine = in.nextLine();
 
         // silently consume all ignored lines
@@ -113,7 +117,7 @@ public class TextUi {
     /** Shows message(s) to the user */
     public void showToUser(String... message) {
         for (String m : message) {
-            out.println(LINE_PREFIX + m.replace("\n", LS + LINE_PREFIX));
+            out.println(_decorator.addPrefix(m.replace("\n", _decorator.addPostfix(LS))));
         }
     }
 
