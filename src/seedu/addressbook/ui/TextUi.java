@@ -75,7 +75,7 @@ public class TextUi {
         if (resultPersons.isPresent()) {
             showPersonListView(resultPersons.get());
         }
-        showToUser(result.feedbackToUser, DIVIDER);
+        showToUser(_formattor.getResultShowToUser(result.feedbackToUser));
     }
 
     /**

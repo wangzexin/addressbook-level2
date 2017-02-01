@@ -122,7 +122,7 @@ public class Formatter {
 	        	if (totalMessage != "") {
 	        		totalMessage = totalMessage + "\n";
 	        	}
-	        	totalMessage = totalMessage + this.formatShowToUser(message);
+	        	totalMessage = totalMessage + message;
 	        }
 			return totalMessage;
 		}
@@ -162,5 +162,9 @@ public class Formatter {
 
 	public String getInitFailedMessage() {
 		return getMessagesInLines(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
+	}
+
+	public String getResultShowToUser(String feedbackToUser) {
+		return getMessagesInLines(feedbackToUser, DIVIDER);
 	}
 }
