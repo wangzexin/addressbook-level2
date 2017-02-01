@@ -31,4 +31,8 @@ public class Formatter {
     public String addPostfix(String str){
     	return str + LINE_DECORATOR;
     }
+
+	public String formatShowToUser(String m) {
+		return this.addPrefix(m.replace("\n", this.addPostfix(LS)));
+	}
 }

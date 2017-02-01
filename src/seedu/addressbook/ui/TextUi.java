@@ -18,12 +18,6 @@ import java.util.Scanner;
  */
 public class TextUi {
 
-    /** A decorative prefix added to the beginning of lines printed by AddressBook */
-    private static final String LINE_DECORATOR = "|| ";
-
-    /** A platform independent line separator. */
-    private static final String LS = System.lineSeparator();
-
     private static final String DIVIDER = "===================================================";
 
     /** Format of indexed list item */
@@ -117,7 +111,7 @@ public class TextUi {
     /** Shows message(s) to the user */
     public void showToUser(String... message) {
         for (String m : message) {
-            out.println(_formattor.addPrefix(m.replace("\n", _formattor.addPostfix(LS))));
+        	out.println(_formattor.formatShowToUser(m));
         }
     }
 
