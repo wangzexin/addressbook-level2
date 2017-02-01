@@ -4,11 +4,9 @@ import seedu.addressbook.commands.CommandResult;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 import seedu.addressbook.ui.Formatter;
 
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.List;
 import java.util.Optional;
-import java.util.Scanner;
 
 /**
  * Text UI of the application.
@@ -20,18 +18,16 @@ public class TextUi {
     /** Offset required to convert between 1-indexing and 0-indexing.  */
     public static final int DISPLAYED_INDEX_OFFSET = 1;
 
-    private final Scanner in;
     private final PrintStream out;
-    
+
     private Formatter _formattor;
 
     public TextUi() {
-        this(System.in, System.out);
+        this(System.out);
         _formattor = new Formatter();
     }
 
-    public TextUi(InputStream in, PrintStream out) {
-        this.in = new Scanner(in);
+    public TextUi(PrintStream out) {
         this.out = out;
         _formattor = new Formatter();
     }

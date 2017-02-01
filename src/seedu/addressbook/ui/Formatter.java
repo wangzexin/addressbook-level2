@@ -72,7 +72,7 @@ public class Formatter {
     }
 
 	public String formatShowToUser(String m) {
-		return this.addPrefix(m.replace("\n", this.addPostfix(LS)));
+		return addPrefix(m.replace("\n", this.addPostfix(LS)));
 	}
 
 	public String getCommandMessage() {
