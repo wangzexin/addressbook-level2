@@ -155,13 +155,4 @@ public class StorageFile {
         return path.toString();
     }
 
-	public boolean hasStorageFileExist() throws FileNotFoundException{
-		// throw exception when there is no storage file
-		boolean isStorageFileExist = path.toFile().exists();
-		if (!isStorageFileExist) {
-			throw new FileNotFoundException("Error finding storage file.");
-		}
-		return isStorageFileExist;
-	}
-
 }
