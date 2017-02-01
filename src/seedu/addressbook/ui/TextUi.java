@@ -13,11 +13,6 @@ import java.util.Optional;
  */
 public class TextUi {
 
-    private static final String DIVIDER = "===================================================";
-
-    /** Offset required to convert between 1-indexing and 0-indexing.  */
-    public static final int DISPLAYED_INDEX_OFFSET = 1;
-
     private final PrintStream out;
 
     private Formatter _formattor;
