@@ -39,17 +39,17 @@ public class TextUi {
     private final Scanner in;
     private final PrintStream out;
     
-    private Formatter _decorator;
+    private Formatter _formattor;
 
     public TextUi() {
         this(System.in, System.out);
-        _decorator = new Formatter(LINE_DECORATOR);
+        _formattor = new Formatter();
     }
 
     public TextUi(InputStream in, PrintStream out) {
         this.in = new Scanner(in);
         this.out = out;
-        _decorator = new Formatter(LINE_DECORATOR);
+        _formattor = new Formatter();
     }
 
     /**
@@ -80,7 +80,7 @@ public class TextUi {
      * @return command (full line) entered by the user
      */
     public String getUserCommand() {
-        out.print(_decorator.addPrefix("Enter command: "));
+        out.print(_formattor.addPrefix("Enter command: "));
         String fullInputLine = in.nextLine();
 
         // silently consume all ignored lines
@@ -117,7 +117,7 @@ public class TextUi {
     /** Shows message(s) to the user */
     public void showToUser(String... message) {
         for (String m : message) {
-            out.println(_decorator.addPrefix(m.replace("\n", _decorator.addPostfix(LS))));
+            out.println(_formattor.addPrefix(m.replace("\n", _formattor.addPostfix(LS))));
         }
     }
 
