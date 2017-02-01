@@ -1,7 +1,5 @@
 package seedu.addressbook.ui;
 
-import static seedu.addressbook.common.Messages.*;
-
 import seedu.addressbook.commands.CommandResult;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 import seedu.addressbook.ui.Formatter;
@@ -62,7 +60,7 @@ public class TextUi {
 
 
     public void showInitFailedMessage() {
-        showToUser(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
+        showToUser(_formattor.getInitFailedMessage());
     }
 
     /** Shows message(s) to the user */
