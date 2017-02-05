@@ -304,4 +304,16 @@ public class ParserTest {
         assertTrue(result.getClass().isAssignableFrom(expectedCommandClass));
         return (T) result;
     }
+    
+    /**
+     * Returns a concatenated version of the printable strings of each object.
+     */
+    private String getPrintableString(Printable... printables){
+    	String totalPrintableString = "";
+    	for (Printable printable : printables) {
+    		totalPrintableString += printable.getPrintableString() + ", ";
+    	}
+    	totalPrintableString = totalPrintableString.substring(0, totalPrintableString.length() - 2);
+    	return totalPrintableString;
+    }
 }
