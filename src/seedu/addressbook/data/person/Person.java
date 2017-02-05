@@ -1,5 +1,8 @@
 package seedu.addressbook.data.person;
 
+import seedu.addressbook.data.tag.Tag;
+import seedu.addressbook.data.tag.Tagging;
+import seedu.addressbook.data.tag.Tagging.TaggingType;
 import seedu.addressbook.data.tag.UniqueTagList;
 
 import java.util.Objects;
@@ -57,6 +60,16 @@ public class Person implements ReadOnlyPerson {
     @Override
     public UniqueTagList getTags() {
         return new UniqueTagList(tags);
+    }
+    
+    public Tagging addTagging(Tag tag) {
+    	Tagging tagging = new Tagging(this, tag, TaggingType.ADD);
+    	return tagging;
+    }
+
+    public Tagging deleteTagging(Tag tag) {
+    	Tagging tagging = new Tagging(this, tag, TaggingType.DELETE);
+    	return tagging;
     }
 
     /**
