@@ -59,5 +59,9 @@ public class Name implements Printable {
     public int hashCode() {
         return fullName.hashCode();
     }
-
+    
+    @Override
+    public String getPrintableString(){
+    	return "Name: " + this.toString();
+    }
 }
