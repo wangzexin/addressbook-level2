@@ -13,7 +13,7 @@ public class Contact{
     public static final String CONTACT_VALIDATION_REGEX = "dummy";
 
 	public final String value;
-    private boolean isPrivate;
+    protected boolean isPrivate;
     
     /**
      * Validates given contact.
