@@ -16,9 +16,9 @@ public class Contact{
     private boolean isPrivate;
     
     /**
-     * Validates given address.
+     * Validates given contact.
      *
-     * @throws IllegalValueException if given address string is invalid.
+     * @throws IllegalValueException if given contact string is invalid.
      */
     public Contact(String contact, boolean isPrivate) throws IllegalValueException {
         String trimmedContact = contact.trim();
