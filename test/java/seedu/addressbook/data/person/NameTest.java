@@ -30,5 +30,9 @@ public class NameTest {
 		assertTrue(supersetName.isSimilar(name3));
 		
 		assertTrue(differentCaseName.isSimilar(name2));
+		assertTrue(name2.isSimilar(differentCaseName));
+		
+		assertTrue(differentCaseName.isSimilar(supersetName));
+		assertTrue(supersetName.isSimilar(differentCaseName));
 	}
 }
