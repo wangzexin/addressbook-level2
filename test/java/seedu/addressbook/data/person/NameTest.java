@@ -15,27 +15,35 @@ public class NameTest {
 	
 	@Test
 	public void testIsSimilar() throws IllegalValueException{
+
 		Name name1 = new Name("Jane Eyre");
 		Name name2 = new Name("Jay Chou");
 		Name name3 = new Name("Jay Chou");
-		Name supersetName = new Name("Jay Chou Zhou");
-		Name differentCaseName = new Name("jAY cHOU");
-		Name nullName = null;
 		
 		assertFalse(name1.isSimilar(name2));
 		assertTrue(name1.isSimilar(name1));
 
 		assertTrue(name2.isSimilar(name3));
 		
-		assertTrue(name2.isSimilar(supersetName));
-		assertTrue(supersetName.isSimilar(name3));
+		Name supersetName = new Name("Jay Chou Zhou");
+		Name subsetName = new Name("Jay Chou");
 		
-		assertTrue(differentCaseName.isSimilar(name2));
-		assertTrue(name2.isSimilar(differentCaseName));
+		assertTrue(subsetName.isSimilar(supersetName));
+		assertTrue(supersetName.isSimilar(subsetName));
 		
-		assertTrue(differentCaseName.isSimilar(supersetName));
-		assertTrue(supersetName.isSimilar(differentCaseName));
+		Name differentCaseName1 = new Name("jAY cHOU");
+		Name differentCaseName2 = new Name("Jay Chou");
+		Name differentCaseSupersetName = new Name("Jay CHOU Zhou");
+		Name nullName = null;
+
+		assertTrue(differentCaseName1.isSimilar(differentCaseName2));
+		assertTrue(differentCaseName2.isSimilar(differentCaseName1));
 		
-		assertFalse(name1.isSimilar(nullName));
+		assertTrue(differentCaseName1.isSimilar(differentCaseSupersetName));
+		assertTrue(differentCaseSupersetName.isSimilar(differentCaseName1));
+		assertTrue(differentCaseName2.isSimilar(differentCaseSupersetName));
+		assertTrue(differentCaseSupersetName.isSimilar(differentCaseName2));
+		
+		assertFalse(differentCaseName1.isSimilar(nullName));
 	}
 }
