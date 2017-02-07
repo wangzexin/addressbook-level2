@@ -11,6 +11,9 @@ import java.util.List;
 import org.junit.Test;
 
 public class UtilsTest {
+	
+	private enum nullEnum {NULL};
+	
     @Test
     public void isAnyNull() {
         // empty list
@@ -45,6 +48,9 @@ public class UtilsTest {
         // non empty list with null ArrayList
         ArrayList nullArrayList = null;
         assertTrue(Utils.isAnyNull(nullArrayList));
+        
+        // non empty list with nullEnum NULL
+        assertFalse(Utils.isAnyNull(nullEnum.NULL));
     }
 
     @Test
