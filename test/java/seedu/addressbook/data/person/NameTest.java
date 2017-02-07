@@ -17,6 +17,8 @@ public class NameTest {
 	public void testIsSimilar() throws IllegalValueException{
 		Name name1 = new Name("Jane Eyre");
 		Name name2 = new Name("Jay Chou");
+		
 		assertFalse(name1.isSimilar(name2));
+		assertTrue(name1.isSimilar(name1));
 	}
 }
