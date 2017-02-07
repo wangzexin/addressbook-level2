@@ -64,8 +64,7 @@ public class Name {
      * Returns true of the other name is very similar to this name.
      * Two names are considered similar if one of their full names is a subset of the other 
      * or one of their full name is in a different case of the other
-     * and there is not only one null in them
-     * or they are both null
+     * and the other name is not null (since null does not method isSimilar)
      */
 	public boolean isSimilar(Name other) {
 		if (other == null) {
