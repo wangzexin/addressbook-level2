@@ -3,8 +3,10 @@ package seedu.addressbook.common;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 
 import org.junit.Test;
 
@@ -39,6 +41,10 @@ public class UtilsTest {
         // non empty list with null string
         String nullString = null;
         assertTrue(Utils.isAnyNull(nullString));
+        
+        // non empty list with null ArrayList
+        ArrayList nullArrayList = null;
+        assertTrue(Utils.isAnyNull(nullArrayList));
     }
 
     @Test
