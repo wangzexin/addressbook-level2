@@ -69,7 +69,7 @@ public class Name {
      */
 	public boolean isSimilar(Name other) {
 		return other.fullName.toLowerCase().contains(this.fullName.toLowerCase())
-				|| this.fullName.contains(other.fullName);
+				|| this.fullName.toLowerCase().contains(other.fullName.toLowerCase());
 	}
 
 }
