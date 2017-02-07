@@ -82,6 +82,7 @@ public class UtilsTest {
         assertNotUnique(null, "a", "b", null);
         assertNotUnique(nullString1, nullString2);
         assertNotUnique(nullArrayList, nullString1);
+        assertNotUnique(nullEnum.NULL, nullEnum.NULL);
     }
 
     private void assertAreUnique(Object... objects) {
