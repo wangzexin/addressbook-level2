@@ -65,7 +65,7 @@ public class Name {
      * Two names are considered similar if ...
      */
 	public boolean isSimilar(Name other) {
-		return this == other;
+		return this.fullName == other.fullName;
 	}
 
 }
