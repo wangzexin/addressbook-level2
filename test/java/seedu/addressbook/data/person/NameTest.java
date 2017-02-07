@@ -18,10 +18,13 @@ public class NameTest {
 		Name name1 = new Name("Jane Eyre");
 		Name name2 = new Name("Jay Chou");
 		Name name3 = new Name("Jay Chou");
+		Name supersetName = new Name("Jay Chou Zhou");
 		
 		assertFalse(name1.isSimilar(name2));
 		assertTrue(name1.isSimilar(name1));
 
 		assertTrue(name2.isSimilar(name3));
+		
+		assertTrue(name2.isSimilar(supersetName));
 	}
 }
