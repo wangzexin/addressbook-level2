@@ -55,6 +55,9 @@ public class UtilsTest {
 
     @Test
     public void elementsAreUnique() throws Exception {
+    	String nullString1 = null;
+    	String nullString2 = null;
+    	
         // empty list
         assertAreUnique();
 
@@ -76,6 +79,7 @@ public class UtilsTest {
         assertNotUnique(null, 1, new Integer(1));
         assertNotUnique(null, null);
         assertNotUnique(null, "a", "b", null);
+        assertNotUnique(nullString1, nullString2);
     }
 
     private void assertAreUnique(Object... objects) {
