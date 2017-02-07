@@ -68,7 +68,7 @@ public class Name {
      * or they are both null
      */
 	public boolean isSimilar(Name other) {
-		return this.fullName == other.fullName;
+		return other.fullName.contains(this.fullName);
 	}
 
 }
