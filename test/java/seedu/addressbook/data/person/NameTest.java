@@ -26,5 +26,6 @@ public class NameTest {
 		assertTrue(name2.isSimilar(name3));
 		
 		assertTrue(name2.isSimilar(supersetName));
+		assertTrue(supersetName.isSimilar(name3));
 	}
 }
