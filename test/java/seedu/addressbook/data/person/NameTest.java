@@ -19,6 +19,7 @@ public class NameTest {
 		Name name2 = new Name("Jay Chou");
 		Name name3 = new Name("Jay Chou");
 		Name supersetName = new Name("Jay Chou Zhou");
+		Name differentCaseName = new Name("jAY cHOU");
 		
 		assertFalse(name1.isSimilar(name2));
 		assertTrue(name1.isSimilar(name1));
@@ -27,5 +28,7 @@ public class NameTest {
 		
 		assertTrue(name2.isSimilar(supersetName));
 		assertTrue(supersetName.isSimilar(name3));
+		
+		assertTrue(differentCaseName.isSimilar(name2));
 	}
 }
