@@ -68,8 +68,13 @@ public class Name {
      * or they are both null
      */
 	public boolean isSimilar(Name other) {
-		return other.fullName.toLowerCase().contains(this.fullName.toLowerCase())
-				|| this.fullName.toLowerCase().contains(other.fullName.toLowerCase());
+		if (other == null) {
+			return false;
+		}
+		else {
+			return other.fullName.toLowerCase().contains(this.fullName.toLowerCase())
+					|| this.fullName.toLowerCase().contains(other.fullName.toLowerCase());
+		}
 	}
 
 }
