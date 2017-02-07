@@ -35,6 +35,10 @@ public class UtilsTest {
         // confirms nulls inside the list are not considered
         List<Object> nullList = Arrays.asList((Object) null);
         assertFalse(Utils.isAnyNull(nullList));
+        
+        // non empty list with null string
+        String nullString = null;
+        assertTrue(Utils.isAnyNull(nullString));
     }
 
     @Test
