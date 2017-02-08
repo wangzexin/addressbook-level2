@@ -26,7 +26,7 @@ public class AddressBook {
     private final UniquePersonList allPersons;
     private final UniqueTagList allTags; // can contain tags not attached to any person
     
-    private static ArrayList<Tagging> allTaggings;
+    private static ArrayList<Tagging> _allTaggings;
 
     /**
      * Creates an empty address book.
@@ -34,7 +34,7 @@ public class AddressBook {
     public AddressBook() {
         allPersons = new UniquePersonList();
         allTags = new UniqueTagList();
-        allTaggings = new ArrayList<>();
+        _allTaggings = new ArrayList<>();
     }
 
     /**
@@ -133,7 +133,7 @@ public class AddressBook {
      */
     public Tagging addTagging(Person person, Tag tag) {
     	Tagging tagging = new Tagging(person, tag, TaggingType.ADD);
-    	allTaggings.add(tagging);
+    	_allTaggings.add(tagging);
     	return tagging;
     }
 
@@ -142,7 +142,7 @@ public class AddressBook {
      */
     public Tagging deleteTagging(Person person, Tag tag) {
     	Tagging tagging = new Tagging(person, tag, TaggingType.DELETE);
-    	allTaggings.add(tagging);
+    	_allTaggings.add(tagging);
     	return tagging;
     }
 
@@ -152,9 +152,15 @@ public class AddressBook {
     public void clear() {
         allPersons.clear();
         allTags.clear();
+        printTaggings(_allTaggings);
+        _allTaggings.clear();
     }
 
-    /**
+    private void printTaggings(ArrayList<Tagging> allTaggings) {
+		
+	}
+
+	/**
      * Defensively copied UniquePersonList of all persons in the address book at the time of the call.
      */
     public UniquePersonList getAllPersons() {
