@@ -61,16 +61,6 @@ public class Person implements ReadOnlyPerson {
     public UniqueTagList getTags() {
         return new UniqueTagList(tags);
     }
-    
-    public Tagging addTagging(Tag tag) {
-    	Tagging tagging = new Tagging(this, tag, TaggingType.ADD);
-    	return tagging;
-    }
-
-    public Tagging deleteTagging(Tag tag) {
-    	Tagging tagging = new Tagging(this, tag, TaggingType.DELETE);
-    	return tagging;
-    }
 
     /**
      * Replaces this person's tags with the tags in the argument tag list.
