@@ -133,6 +133,7 @@ public class AddressBook {
      */
     public Tagging addTagging(Person person, Tag tag) {
     	Tagging tagging = new Tagging(person, tag, TaggingType.ADD);
+    	allTaggings.add(tagging);
     	return tagging;
     }
 
@@ -141,6 +142,7 @@ public class AddressBook {
      */
     public Tagging deleteTagging(Person person, Tag tag) {
     	Tagging tagging = new Tagging(person, tag, TaggingType.DELETE);
+    	allTaggings.add(tagging);
     	return tagging;
     }
 
