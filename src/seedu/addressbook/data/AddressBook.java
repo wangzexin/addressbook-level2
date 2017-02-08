@@ -14,6 +14,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import java.io.PrintStream;
+
 /**
  * Represents the entire address book. Contains the data of the address book.
  *
@@ -27,11 +29,14 @@ public class AddressBook {
     private final UniqueTagList allTags; // can contain tags not attached to any person
     
     private static ArrayList<Tagging> _allTaggings;
+    
+    private final PrintStream out;
 
     /**
      * Creates an empty address book.
      */
     public AddressBook() {
+    	out = System.out;
         allPersons = new UniquePersonList();
         allTags = new UniqueTagList();
         _allTaggings = new ArrayList<>();
@@ -45,6 +50,7 @@ public class AddressBook {
      * @param tags external changes to this will not affect this address book
      */
     public AddressBook(UniquePersonList persons, UniqueTagList tags) {
+    	out = System.out;
         this.allPersons = new UniquePersonList(persons);
         this.allTags = new UniqueTagList(tags);
         for (Person p : allPersons) {
@@ -157,7 +163,18 @@ public class AddressBook {
     }
 
     private void printTaggings(ArrayList<Tagging> allTaggings) {
-		
+		for (Tagging tagging : allTaggings) {
+			Person person = tagging.getPerson();
+			Tag tag = tagging.getTag();
+			TaggingType taggingType = tagging.getTaggingType();
+			if (taggingType == TaggingType.ADD) {
+				out.print("Add ");
+			}
+			else {
+				out.print("Delete ");
+			}
+			out.println(person.toString() + " " + tag.toString());
+		}
 	}
 
 	/**
