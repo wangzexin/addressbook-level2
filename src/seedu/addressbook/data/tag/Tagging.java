@@ -1,7 +1,5 @@
 package seedu.addressbook.data.tag;
 
-import java.util.ArrayList;
-
 import seedu.addressbook.data.person.Person;
 
 public class Tagging{
@@ -16,5 +14,17 @@ public class Tagging{
 		_person = person;
 		_tag = tag;
 		_taggingType = taggingType;
+	}
+	
+	public Person getPerson() {
+		return _person;
+	}
+	
+	public Tag getTag() {
+		return _tag;
+	}
+	
+	public TaggingType getTaggingType() {
+		return _taggingType;
 	}
 }
