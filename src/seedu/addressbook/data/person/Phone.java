@@ -60,7 +60,7 @@ public class Phone implements Printable {
     
     @Override
     public String getPrintableString(){
-    	if (this.isPrivate()) {
+    	if (!this.isPrivate()) {
         	return "Phone: " + this.toString();    		
     	}
     	else {
